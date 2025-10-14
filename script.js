@@ -151,7 +151,7 @@ serviceCards.forEach((card) => {
 const typingText = document.querySelector(".hero-text h2");
 if (typingText) {
   const text = typingText.textContent;
-  typingText.textContent = "";
+  typingText.textContent = " ";
   let i = 0;
 
   const typeWriter = () => {
