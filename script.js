@@ -73,6 +73,11 @@ window.addEventListener("scroll", () => {
   }
 });
 
+// EmailJS Configuration
+(function () {
+  emailjs.init("EHKAo9iMafM8O8MIG");
+})();
+
 // Form Submission Handler
 const contactForm = document.querySelector(".contact-form");
 
@@ -86,14 +91,45 @@ if (contactForm) {
     const subject = document.getElementById("subject").value;
     const message = document.getElementById("message").value;
 
-    // Here you would typically send the form data to a server
-    // For now, we'll just show a success message
-    alert(
-      `Thank you ${name}! Your message has been sent successfully. I'll get back to you soon.`
-    );
+    // Show loading state
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = "Sending...";
+    submitBtn.disabled = true;
 
-    // Reset form
-    contactForm.reset();
+    // Prepare template parameters
+    const templateParams = {
+      from_name: name,
+      title: "Requset from Portfolio",
+      from_email: email,
+      subject: subject,
+      message: message,
+      to_name: "Raj Kashyap",
+    };
+
+    // Send email using EmailJS
+    emailjs
+      .send("service_portfolio", "template_4zvkxsn", templateParams)
+      .then(
+        function (response) {
+          console.log("SUCCESS!", response.status, response.text);
+          alert(
+            `Thank you ${name}! Your message has been sent successfully. I'll get back to you soon.`
+          );
+          contactForm.reset();
+        },
+        function (error) {
+          console.log("FAILED...", error);
+          alert(
+            "Sorry, there was an error sending your message. Please try again later."
+          );
+        }
+      )
+      .finally(() => {
+        // Reset button state
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      });
   });
 }
 
@@ -129,15 +165,15 @@ if (typingText) {
   setTimeout(typeWriter, 1000);
 }
 
-// Parallax Effect for Hero Section
-window.addEventListener("scroll", () => {
-  const scrolled = window.pageYOffset;
-  const heroImage = document.querySelector(".hero-image");
+// Parallax Effect for Hero Section (Disabled for performance)
+// window.addEventListener("scroll", () => {
+//   const scrolled = window.pageYOffset;
+//   const heroImage = document.querySelector(".hero-image");
 
-  if (heroImage) {
-    heroImage.style.transform = `translateY(${scrolled * 0.5}px)`;
-  }
-});
+//   if (heroImage) {
+//     heroImage.style.transform = `translateY(${scrolled * 0.5}px)`;
+//   }
+// });
 
 // Project Card Hover Effect
 const projectCards = document.querySelectorAll(".project-card");
