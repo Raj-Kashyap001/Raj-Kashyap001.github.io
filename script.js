@@ -120,8 +120,9 @@ if (contactForm) {
         },
         function (error) {
           console.log("FAILED...", error);
+          // Fallback: show contact info for manual email
           alert(
-            "Sorry, there was an error sending your message. Please try again later."
+            `Sorry, there was an error sending your message. Please email me directly at rajkashyap001@gmail.com`
           );
         }
       )
@@ -164,16 +165,6 @@ if (typingText) {
   // Start typing effect after page loads
   setTimeout(typeWriter, 1000);
 }
-
-// Parallax Effect for Hero Section (Disabled for performance)
-// window.addEventListener("scroll", () => {
-//   const scrolled = window.pageYOffset;
-//   const heroImage = document.querySelector(".hero-image");
-
-//   if (heroImage) {
-//     heroImage.style.transform = `translateY(${scrolled * 0.5}px)`;
-//   }
-// });
 
 // Project Card Hover Effect
 const projectCards = document.querySelectorAll(".project-card");
