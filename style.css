@@ -12,6 +12,10 @@
   --neu-shadow-dark: #bcbcbc;
   --neu-border: rgb(206, 206, 206);
   --neu-text: #313131;
+  --glass-bg: rgba(255, 255, 255, 0.25);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --glass-blur: blur(10px);
 }
 
 [data-theme="dark"] {
@@ -65,7 +69,6 @@ header {
   width: 100%;
   background: var(--glass-bg);
   border-bottom: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow);
   z-index: 1000;
   transition: all 0.3s ease;
 }
@@ -139,7 +142,10 @@ nav {
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  box-shadow: var(--glass-shadow);
+}
+
+[data-theme="dark"] .theme-toggle {
+  box-shadow: none;
 }
 
 .theme-toggle:hover {
@@ -813,11 +819,11 @@ footer p {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--glass-border);
-    box-shadow: var(--glass-shadow);
+    background: var(--bg-primary);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: none;
+    box-shadow: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -879,7 +885,7 @@ footer p {
   }
 
   .hero {
-    padding-top: 60px;
+    padding-top: 80px;
   }
 
   .hero-text h1 {
@@ -944,7 +950,7 @@ footer p {
   }
 
   .hero {
-    padding-top: 55px;
+    padding-top: 70px;
   }
 
   .hero-text h1 {
