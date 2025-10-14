@@ -3,10 +3,15 @@
   --bg-secondary: #f5f5f5;
   --text-primary: #212121;
   --text-secondary: #757575;
-  --accent: #2196f3;
-  --accent-dark: #1976d2;
+  --accent: #4caf50;
+  --accent-dark: #388e3c;
   --card-bg: #ffffff;
   --shadow: rgba(0, 0, 0, 0.1);
+  --neu-bg: #e0e0e0;
+  --neu-shadow-light: #ffffff;
+  --neu-shadow-dark: #bcbcbc;
+  --neu-border: rgb(206, 206, 206);
+  --neu-text: #313131;
 }
 
 [data-theme="dark"] {
@@ -14,10 +19,19 @@
   --bg-secondary: #1e1e1e;
   --text-primary: #ffffff;
   --text-secondary: #b0b0b0;
-  --accent: #64b5f6;
-  --accent-dark: #42a5f5;
+  --accent: #81c784;
+  --accent-dark: #4caf50;
   --card-bg: #1e1e1e;
   --shadow: rgba(0, 0, 0, 0.3);
+  --neu-bg: #1e1e1e;
+  --neu-shadow-light: #2e2e2e;
+  --neu-shadow-dark: #0e0e0e;
+  --neu-border: #2e2e2e;
+  --neu-text: #ffffff;
+  --glass-bg: rgba(0, 0, 0, 0.25);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --glass-blur: blur(10px);
 }
 
 * {
@@ -49,10 +63,11 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: var(--bg-primary);
-  box-shadow: 0 2px 10px var(--shadow);
+  background: var(--glass-bg);
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
   z-index: 1000;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 nav {
@@ -61,6 +76,8 @@ nav {
   align-items: center;
   padding: 1.5rem 0;
   min-height: 80px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: var(--glass-blur);
 }
 
 .logo {
@@ -111,14 +128,18 @@ nav {
 }
 
 .theme-toggle {
-  background: none;
-  border: none;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 50%;
   cursor: pointer;
   padding: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: var(--glass-shadow);
 }
 
 .theme-toggle:hover {
@@ -264,6 +285,39 @@ nav {
   box-shadow: 0 5px 15px var(--shadow);
 }
 
+.material-button {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  text-decoration: none;
+}
+
+.material-button:hover {
+  background-color: var(--accent-dark);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.material-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.3);
+}
+
+.material-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 .hero-image {
   display: flex;
   justify-content: center;
@@ -381,9 +435,13 @@ section {
   align-items: center;
   gap: 1rem;
   padding: 1rem;
-  background-color: var(--card-bg);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   border-radius: 8px;
   transition: all 0.3s ease;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
 }
 
 .skill-item:hover {
@@ -410,12 +468,15 @@ section {
 }
 
 .service-card {
-  background-color: var(--card-bg);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   padding: 2rem;
   border-radius: 10px;
   text-align: center;
   transition: all 0.3s ease;
-  border: 1px solid transparent;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
 }
 
 .service-card:hover {
@@ -473,10 +534,14 @@ section {
 }
 
 .project-card {
-  background-color: var(--card-bg);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   border-radius: 10px;
   overflow: hidden;
   transition: all 0.3s ease;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
 }
 
 .project-card:hover {
@@ -507,7 +572,7 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(33, 150, 243, 0.9);
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -590,9 +655,13 @@ section {
   gap: 1rem;
   margin-bottom: 1rem;
   padding: 1rem;
-  background-color: var(--bg-secondary);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   border-radius: 8px;
   transition: all 0.3s ease;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
 }
 
 .contact-item:hover {
@@ -618,9 +687,13 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--bg-secondary);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   border-radius: 50%;
   transition: all 0.3s ease;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
 }
 
 .social-links a:hover {
@@ -641,10 +714,13 @@ section {
 
 /* Contact Form */
 .contact-form {
-  background-color: var(--card-bg);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 5px 20px var(--shadow);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
 }
 
 .form-group {
@@ -698,9 +774,13 @@ section {
 
 /* Footer */
 footer {
-  background-color: var(--bg-secondary);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   padding: 2rem 0;
   text-align: center;
+  border-top: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
 }
 
 footer p {
@@ -733,7 +813,11 @@ footer p {
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: var(--bg-primary);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
     flex-direction: column;
     justify-content: center;
     align-items: center;
