@@ -1,0 +1,15 @@
+# Robots.txt for Raj Kashyap Portfolio
+# https://raj-kashyap001.github.io
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://raj-kashyap001.github.io/sitemap.xml
+
+# Crawl-delay (optional, uncomment if needed)
+# Crawl-delay: 10
+
+# Disallow sensitive paths (if any)
+Disallow: /private/
+Disallow: /admin/
