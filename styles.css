@@ -145,6 +145,9 @@ nav a:hover { color: var(--fg); text-decoration: none; }
 .social a:hover .label {
   display: inline;
 }
+.social a:hover svg {
+  transform: scale(1.2);
+}
 .social a {
   display: inline-flex;
   align-items: center;
