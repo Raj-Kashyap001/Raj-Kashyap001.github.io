@@ -16,6 +16,9 @@
 
   function apply(t) {
     root.setAttribute('data-theme', t);
-    if (btn) btn.textContent = t === 'dark' ? 'Switch to light theme' : 'Switch to dark theme';
+    if (btn) {
+      btn.classList.toggle('is-dark', t === 'dark');
+      btn.setAttribute('aria-label', t === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+    }
   }
 })();
