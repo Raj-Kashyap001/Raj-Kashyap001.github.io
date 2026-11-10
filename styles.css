@@ -139,11 +139,19 @@ nav a:hover { color: var(--fg); text-decoration: none; }
   gap: 0.35rem;
 }
 .social .label {
-  display: none;
+  display: inline-block;
+  opacity: 0;
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
   font-size: 0.85rem;
+  transition: opacity 0.2s ease, max-width 0.2s ease, margin 0.2s ease;
+  margin-left: 0;
 }
 .social a:hover .label {
-  display: inline;
+  opacity: 1;
+  max-width: 90px;
+  margin-left: 0.15rem;
 }
 .social a:hover svg {
   transform: scale(1.2);
