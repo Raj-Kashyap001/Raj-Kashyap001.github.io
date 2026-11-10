@@ -93,8 +93,11 @@ nav a:hover { color: var(--fg); text-decoration: none; }
 .social a:hover { opacity: 1; text-decoration: none; }
 .social img, .social svg { width: 20px; height: 20px; }
 
-main { padding: 2rem 0 4rem; }
+main { padding: 2.5rem 0 4rem; }
 
+section:first-of-type {
+  margin-top: 0.5rem;
+}
 section {
   background: var(--card);
   border: 1px solid var(--border);
