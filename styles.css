@@ -97,6 +97,16 @@ nav a:hover {
   color: var(--fg);
   text-decoration-color: var(--muted);
 }
+nav a:nth-child(5n+1) { color: #cc241d; }
+nav a:nth-child(5n+2) { color: #98971a; }
+nav a:nth-child(5n+3) { color: #458588; }
+nav a:nth-child(5n+4) { color: #b16286; }
+nav a:nth-child(5n+5) { color: #d65d0e; }
+[data-theme="dark"] nav a:nth-child(5n+1) { color: #fb4934; }
+[data-theme="dark"] nav a:nth-child(5n+2) { color: #b8bb26; }
+[data-theme="dark"] nav a:nth-child(5n+3) { color: #83a598; }
+[data-theme="dark"] nav a:nth-child(5n+4) { color: #d3869b; }
+[data-theme="dark"] nav a:nth-child(5n+5) { color: #fe8019; }
 
 nav a:hover { color: var(--fg); text-decoration: none; }
 .theme-toggle {
