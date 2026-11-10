@@ -80,6 +80,18 @@ nav a {
 }
 
 nav a:hover { color: var(--fg); text-decoration: none; }
+.social {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.75rem;
+}
+.social a {
+  display: inline-flex;
+  align-items: center;
+  opacity: 0.75;
+}
+.social a:hover { opacity: 1; text-decoration: none; }
+.social img, .social svg { width: 20px; height: 20px; }
 
 main { padding: 2rem 0 4rem; }
 
