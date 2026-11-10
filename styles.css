@@ -220,23 +220,44 @@ li { margin-bottom: 0.3rem; }
 
 .skill-group {
   border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
   border-radius: 6px;
-  padding: 0.75rem 1rem;
-  background: var(--bg);
+  padding: 0.85rem 1rem;
+  background: var(--card);
 }
 
 .skill-group h3 {
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  margin: 0 0 0.35rem;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+  margin: 0 0 0.5rem;
+  color: var(--fg);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-transform: none;
+  letter-spacing: 0;
 }
 
-.skill-group p {
-  margin: 0;
-  font-size: 0.9rem;
+.sicon {
+  width: 16px;
+  height: 16px;
+  color: var(--muted);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.chips span {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.8rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--fg);
 }
 
 .contact-list {
