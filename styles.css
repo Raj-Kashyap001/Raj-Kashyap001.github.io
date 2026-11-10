@@ -212,52 +212,57 @@ li { margin-bottom: 0.3rem; }
   margin: 0 0 0.6rem;
 }
 
-.skills-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
-.skill-group {
-  border: 1px solid var(--border);
-  border-left: 4px solid var(--accent);
-  border-radius: 6px;
-  padding: 0.85rem 1rem;
-  background: var(--card);
-}
-
-.skill-group h3 {
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin: 0 0 0.5rem;
-  color: var(--fg);
+.skills-list {
   display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  text-transform: none;
-  letter-spacing: 0;
+  flex-direction: column;
 }
 
-.sicon {
-  width: 16px;
-  height: 16px;
+.skill-row {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.skill-row.active-line {
+  border-bottom: 1.5px solid var(--accent);
+}
+
+.skill-num {
+  font-size: 2rem;
+  font-weight: 300;
   color: var(--muted);
+  line-height: 1;
+  min-width: 2.5rem;
+}
+
+.skill-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.skill-name {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--fg);
 }
 
 .chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
+  gap: 0.35rem;
 }
 
 .chips span {
   display: inline-block;
-  padding: 0.2rem 0.6rem;
-  font-size: 0.8rem;
+  padding: 0.15rem 0.55rem;
+  font-size: 0.75rem;
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: 999px;
-  color: var(--fg);
+  color: var(--muted);
 }
 
 .contact-list {
