@@ -126,6 +126,25 @@ nav a:hover { color: var(--fg); text-decoration: none; }
   justify-content: center;
   gap: 0.75rem;
 }
+.social {
+  color: #3c3836;
+}
+[data-theme="dark"] .social {
+  color: aliceblue;
+}
+.social a {
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.social .label {
+  display: none;
+  font-size: 0.85rem;
+}
+.social a:hover .label {
+  display: inline;
+}
 .social a {
   display: inline-flex;
   align-items: center;
